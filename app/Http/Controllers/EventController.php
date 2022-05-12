@@ -103,6 +103,7 @@ class EventController extends Controller
                 $startOfTheMonth = new Carbon($value->format('d-m-Y'));
                 $dayOfTheMonth = Carbon::parse($interval_sting.' of '.$startOfTheMonth->startOfMonth()->format('M Y'));
 
+                // if($dayOfTheMonth->gt($start_date)){ // if you want to current date
                 if($dayOfTheMonth->gte($start_date)){
                     $date_array[] = $dayOfTheMonth->format('Y-m-d');
                 }
